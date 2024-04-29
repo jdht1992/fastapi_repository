@@ -10,5 +10,5 @@ class City(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = Column(String, nullable=False)
-    region_id = Column(UUID(as_uuid=True), ForeignKey("region.id"))
-    region = relationship("Region", back_population="cities")
+    region_id = Column(UUID(as_uuid=True), ForeignKey("regions.id"))
+    region = relationship("Region", back_populates="cities")

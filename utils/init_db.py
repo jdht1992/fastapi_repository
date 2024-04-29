@@ -9,4 +9,3 @@ def create_tables():
     """
     City.metadata.create_all(bind=engine)
     Region.metadata.create_all(bind=engine)
-    
