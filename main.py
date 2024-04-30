@@ -1,8 +1,11 @@
 import uvicorn
 from fastapi import FastAPI
 from utils.init_db import create_tables
+from router.api import router_region
 
 app = FastAPI()
+
+app.include_router(router_region)
 
 
 @app.get("/")
