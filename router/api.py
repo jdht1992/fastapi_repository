@@ -1,10 +1,10 @@
 from fastapi import APIRouter
-from router.v1.region import router
+from router.v1.region import router_region
+from router.v1.city import router_city
 
-router_region = APIRouter(
+router_v1 = APIRouter(
     prefix="/api/v1"
 )
 
-router_region.include_router(router)
-# router.include_router(city.router)
-
+router_v1.include_router(router_region)
+router_v1.include_router(router_city)

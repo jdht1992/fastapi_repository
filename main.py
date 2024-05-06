@@ -1,18 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
 from utils.init_db import create_tables
-from router.api import router_region
+from router.api import router_v1
 
 app = FastAPI()
 
-app.include_router(router_region)
+app.include_router(router_v1)
 
-
-@app.get("/")
-async def welcome():
-    return {
-        "message": "welcome"
-    }
 
 @app.on_event("startup")
 def on_startup() -> None:
